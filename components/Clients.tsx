@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { InfiniteMovingCards } from "./ui/InfiniteMovingCards";
 import { companies, testimonials } from "@/data";
@@ -11,7 +12,7 @@ const Clients = () => {
 			<div className="flex flex-col items-center max-lg:mt-10 max-md:mt-5">
 				<InfiniteMovingCards
 					items={testimonials}
-					direction="right"
+					direction="left"
 					speed="slow"
 					pauseOnHover={true}
 				/>
