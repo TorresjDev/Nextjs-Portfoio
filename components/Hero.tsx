@@ -34,10 +34,15 @@ const Hero = () => {
 					/>
 
 					<p className="text-center mb-4 text-sm md:tracking-wider md:text-lg lg:text-2xl ">
-					Hi, I&apos;m Jesus Torres, a Next.js full-stack developer in Texas, creating fast, responsive, and accessible websites and applications.
+						Hi, I&apos;m Jesus Torres, a full-stack developer in Texas USA,
+						creating fast, responsive, and accessible websites and applications.
 					</p>
 					<a href="#about">
-						<MagicButton title="Show my work" icon={<FaLocationArrow/>} position="right"/>
+						<MagicButton
+							title="Show my work"
+							icon={<FaLocationArrow />}
+							position="right"
+						/>
 					</a>
 				</div>
 			</div>
