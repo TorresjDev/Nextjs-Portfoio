@@ -1,50 +1,58 @@
 export const navItems = [
-	{ name: "About", link: "#about" },
-	{ name: "Projects", link: "#projects" },
-	{ name: "Testimonials", link: "#testimonials" },
-	{ name: "Contact", link: "#contact" },
+	{ name: "About", link: "#about", iconKey: "FaInfoCircle" },
+	{ name: "Projects", link: "#projects", iconKey: "FaBook" },
+	// { name: "Testimonials", link: "#testimonials", iconKey: "FaQuoteRight" },
+	{ name: "Contact", link: "#contact", iconKey: "FaAddressBook" },
 ];
 
 export const gridItems = [
 	{
 		id: 1,
-		title: "I prioritize client collaboration, fostering open communication ",
-		description: "",
+		title: "Strong focus on client collaboration",
+		description:
+			"Ensuring seamless communication to deliver solutions that meet client needs.",
 		className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
 		imgClassName: "w-full h-full",
 		titleClassName: "justify-end",
 		img: "/b1.svg",
 		spareImg: "",
+		objInfo: {},
 	},
 	{
 		id: 2,
-		title: "I'm very flexible with time zone communications",
-		description: "",
+		title: "Adaptable to global time zones",
+		description:
+			"Working effectively across regions for smooth project execution.",
 		className: "lg:col-span-2 md:col-span-3 md:row-span-2",
 		imgClassName: "",
 		titleClassName: "justify-start",
 		img: "",
 		spareImg: "",
+		objInfo: {},
 	},
 	{
 		id: 3,
-		title: "My tech stack",
-		description: "I constantly try to improve",
+		title: "Modern and versatile tech stack",
+		description: "Proficient in these lanuages and frameworks.",
 		className: "lg:col-span-2 md:col-span-3 md:row-span-2",
 		imgClassName: "",
 		titleClassName: "justify-center",
+		techStack1: ["JavaScript", "TypeScript", "C#", "Python"],
+		techStack2: [".Net", "React.js", "Next.js", "Node.js"],
 		img: "",
 		spareImg: "",
+		objInfo: {},
 	},
 	{
 		id: 4,
-		title: "Tech enthusiast with a passion for development.",
+		title: "Current programming languages use",
 		description: "",
 		className: "lg:col-span-2 md:col-span-3 md:row-span-1",
 		imgClassName: "",
 		titleClassName: "justify-start",
 		img: "/grid.svg",
 		spareImg: "/b4.svg",
+		objInfo: {},
 	},
 
 	{
@@ -56,6 +64,7 @@ export const gridItems = [
 		titleClassName: "justify-center md:justify-start lg:justify-center",
 		img: "/b5.svg",
 		spareImg: "/grid.svg",
+		objInfo: {},
 	},
 	{
 		id: 6,
@@ -66,6 +75,7 @@ export const gridItems = [
 		titleClassName: "justify-center md:max-w-full max-w-60 text-center",
 		img: "",
 		spareImg: "",
+		objInfo: {},
 	},
 ];
 

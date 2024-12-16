@@ -25,19 +25,22 @@ const Hero = () => {
 
 			<div className="flex justify-center relative my-20 z-10">
 				<div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-					<h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-						Dynamic Web Magic with Next.js
+					<h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-90">
+						Software Developer
 					</h2>
 					<TextGenerateEffect
 						className="text-center text-[40px] md:text-5xl ld:text-6xl"
-						words="Transforming concepts into seamless User Experiences"
+						words="Bringing innovative ideas to life through programming"
 					/>
 
 					<p className="text-center mb-4 text-sm md:tracking-wider md:text-lg lg:text-2xl ">
-						Hi, I&apos;m Jesus Torres, a full-stack developer in Texas USA,
-						creating fast, responsive, and accessible websites and applications.
+						Hi, I&apos;m Jesus Torres, a passionate full-stack developer in
+						Texas, USA.
+						<br /> My expertise spans modern technologies and frameworks to
+						build fast, responsive, and accessible digital experiences that
+						blend functionality with stunning user interfaces.
 					</p>
-					<a href="#about">
+					<a href="#projects">
 						<MagicButton
 							title="Show my work"
 							icon={<FaLocationArrow />}

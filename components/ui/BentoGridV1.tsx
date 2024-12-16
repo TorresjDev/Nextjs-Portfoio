@@ -117,13 +117,7 @@ export const BentoGridItem = ({
 					{id === 2 && <GlobeDemo />}
 					{id === 3 && (
 						<div className="flex w-fit justify-center">
-							<a href="https://github.com/anuraghazra/github-readme-stats">
-								<img
-									alt="img most used languages"
-									src="https://github-readme-stats.vercel.app/api/top-langs/?username=TorresjDev&&theme=tokyonight&layout=compact&hide=jupyter+notebook&hide_border=true"
-								/>
-							</a>
-							{/* <div className="flex flex-col gap-3 lg:gap-8">
+							<div className="flex flex-col gap-3 lg:gap-8">
 								{["JavaScript", "TypeScript", "C#", "Python"].map((item) => (
 									<span
 										key={item}
@@ -133,8 +127,8 @@ export const BentoGridItem = ({
 									</span>
 								))}
 								<span className=" px-3 rounded-lg text-center bg-[#10132E]" />
-							</div> */}
-							{/* <div className="flex flex-col gap-3 lg:gap-8">
+							</div>
+							<div className="flex flex-col gap-3 lg:gap-8">
 								<span className="-my-5 px-3 rounded-lg text-center bg-[#10132E]" />
 
 								{["Node.js", "React.js", "Next.js", ".Net", "Numpy"].map(
@@ -147,7 +141,7 @@ export const BentoGridItem = ({
 										</span>
 									)
 								)}
-							</div> */}
+							</div>
 						</div>
 					)}
 

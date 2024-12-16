@@ -14,8 +14,8 @@ declare module "@react-three/fiber" {
 extend({ ThreeGlobe });
 
 const RING_PROPAGATION_SPEED = 3;
-const aspect = 1.2;
-const cameraZ = 300;
+const aspect = 1.5;
+const cameraZ = 250;
 
 type Position = {
 	order: number;
@@ -247,7 +247,7 @@ export function World(props: WorldProps) {
 	const scene = new Scene();
 	scene.fog = new Fog(0xffffff, 400, 2000);
 	return (
-		<Canvas scene={scene} camera={new PerspectiveCamera(50, aspect, 180, 1800)}>
+		<Canvas scene={scene} camera={new PerspectiveCamera(50, aspect, 150, 1500)}>
 			<WebGLRendererConfig />
 			<ambientLight color={globeConfig.ambientLight} intensity={0.6} />
 			<directionalLight
