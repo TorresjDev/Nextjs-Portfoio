@@ -14,8 +14,7 @@ declare module "@react-three/fiber" {
 extend({ ThreeGlobe });
 
 const RING_PROPAGATION_SPEED = 3;
-const aspect = 1.5;
-const cameraZ = 250;
+const cameraZ = 300;
 
 type Position = {
 	order: number;
@@ -225,7 +224,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
 	return (
 		<>
-			<threeGlobe ref={globeRef} />
+			<threeGlobe ref={globeRef} position={[0, -45, 0]} />
 		</>
 	);
 }
@@ -237,7 +236,7 @@ export function WebGLRendererConfig() {
 		gl.setPixelRatio(window.devicePixelRatio);
 		gl.setSize(size.width, size.height);
 		gl.setClearColor(0xffaaff, 0);
-	}, []);
+	}, [gl, size.height, size.width]);
 
 	return null;
 }
@@ -246,8 +245,26 @@ export function World(props: WorldProps) {
 	const { globeConfig } = props;
 	const scene = new Scene();
 	scene.fog = new Fog(0xffffff, 400, 2000);
+
 	return (
-		<Canvas scene={scene} camera={new PerspectiveCamera(50, aspect, 150, 1500)}>
+		<Canvas
+			scene={scene}
+			camera={
+				new PerspectiveCamera(
+					33,
+					window.innerWidth / window.innerHeight,
+					0.1,
+					2000
+				)
+			}
+			// camera={{
+			// 	fov: 35,
+			// 	aspect: window.innerWidth / window.innerHeight,
+			// 	near: 0.1,
+			// 	far: 2000,
+			// 	position: [0, 10, cameraZ],
+			// }}
+		>
 			<WebGLRendererConfig />
 			<ambientLight color={globeConfig.ambientLight} intensity={0.6} />
 			<directionalLight
@@ -267,11 +284,11 @@ export function World(props: WorldProps) {
 			<OrbitControls
 				enablePan={false}
 				enableZoom={false}
-				minDistance={cameraZ}
-				maxDistance={cameraZ}
+				minDistance={cameraZ * 0.9}
+				maxDistance={cameraZ * 1.2}
 				autoRotateSpeed={1}
 				autoRotate={true}
-				minPolarAngle={Math.PI / 3.5}
+				minPolarAngle={Math.PI / 2}
 				maxPolarAngle={Math.PI - Math.PI / 3}
 			/>
 		</Canvas>
