@@ -254,7 +254,7 @@ export function World(props: WorldProps) {
 					33,
 					window.innerWidth / window.innerHeight,
 					0.1,
-					2000
+					3000
 				)
 			}
 			// camera={{
