@@ -2,14 +2,14 @@
 import React from "react";
 import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa";
-import { socialMedia } from "@/data";
+import { assetUrl, socialMedia } from "@/data";
 
 const Footer = () => {
 	return (
 		<footer className="w-full pt-20 pb-20 mb-3 relative" id="contact">
 			<div className="absolute inset-0">
 				<img
-					src="/footer-grid.svg"
+					src={`${assetUrl}/backgrounds/ui/bg.png`}
 					alt="grid"
 					className="w-full h-full object-cover opacity-50 "
 				/>

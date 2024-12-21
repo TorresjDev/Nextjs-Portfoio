@@ -1,3 +1,5 @@
+export const assetUrl = "https://torresjdev.github.io/assets-host/assets";
+
 export const navItems = [
 	{ name: "About", link: "#about", iconKey: "FaInfoCircle" },
 	{ name: "Projects", link: "#projects", iconKey: "FaBook" },
@@ -11,10 +13,10 @@ export const gridItems = [
 		title: "Strong focus on client collaboration",
 		description:
 			"Ensuring seamless communication to deliver solutions that meet client needs.",
-		className: "lg:col-span-4 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
+		className: "lg:col-span-4 md:col-span-7 md:row-span-4 lg:min-h-[60vh]",
 		imgClassName: "w-full h-full",
 		titleClassName: "justify-start",
-		img: "/b1.svg",
+		img: `${assetUrl}/covers/projects/b1.svg`,
 		spareImg: "",
 	},
 	{
@@ -22,7 +24,7 @@ export const gridItems = [
 		title: "Adaptable to global time zones",
 		description:
 			"Working effectively across regions for smooth project execution.",
-		className: "lg:col-span-2 md:col-span-3 md:row-span-2",
+		className: "lg:col-span-3 md:col-span-4 md:row-span-3",
 		imgClassName: "",
 		titleClassName: "justify-start",
 		img: "",
@@ -41,22 +43,21 @@ export const gridItems = [
 	// 	spareImg: "",
 	// 	objInfo: {},
 	// },
-
 	{
 		id: 3,
 		title: "Current programming languages use",
 		description: "",
-		className: "lg:col-span-2 md:col-span-3 md:row-span-2 md:row-span-1",
+		className: "lg:col-span-3 md:col-span-3 md:row-span-2",
 		imgClassName: "",
 		titleClassName: "justify-start",
-		img: "/grid.svg",
-		spareImg: "/b4.svg",
+		img: `${assetUrl}/backgrounds/ui/grid.svg`,
+		spareImg: `${assetUrl}/icons/ui/b4.svg`,
 	},
 	{
 		id: 4,
 		title: "Do you want to start a project together?",
 		description: "",
-		className: "lg:col-span-2 md:col-span-3 md:row-span-1",
+		className: "lg:col-span-4 md:col-span-3 sm:row-span-1",
 		imgClassName: "",
 		titleClassName: "justify-center md:max-w-full max-w-60 text-center",
 		img: "",
@@ -64,20 +65,10 @@ export const gridItems = [
 	},
 	{
 		id: 5,
-		title: "Currently building a JS Animation library",
-		description: "The Inside Scoop",
-		className: "2xl:col-span-2 lg:col-span-3 md:col-span-3 md:row-span-2",
-		imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-		titleClassName: "justify-center md:justify-start lg:justify-center",
-		img: "/b5.svg",
-		spareImg: "/grid.svg",
-	},
-	{
-		id: 6,
 		title: "",
 		description: "",
 		className:
-			"3xl:col-span-1 lg:col-span-2 md:col-span-3 md:row-span-2 !bg-transparent !border-none",
+			"2xl:col-span-2 lg:col-span-3 md:col-span-3 md:row-span-2 !bg-transparent !border-none",
 		imgClassName:
 			"h-full justify-self-center rounded-3xl border border-white/[0.2]",
 		titleClassName: "",
@@ -85,51 +76,129 @@ export const gridItems = [
 		spareImg: "",
 	},
 	{
-		id: 7,
+		id: 6,
 		title: "",
 		description: "",
 		className:
-			"3xl:col-span-2 2xl:col-span-2 lg:col-span-3 md:col-span-4 md:row-span-2 !bg-transparent !border-none",
+			"3xl:col-span-2 2xl:col-span-3 md:col-span-4 md:row-span-2 !bg-transparent !border-none",
 		imgClassName:
-			"h-full justify-self-center rounded-3xl border border-white/[0.2]",
+			"sm:h-full justify-self-center rounded-3xl border border-white/[0.2] h-3/4",
 		titleClassName: "",
-		img: "https://github-readme-stats.vercel.app/api/wakatime?username=@@Jtorres&layout=compact&theme=tokyonight&hide_border=true&hide=text,other,binary,tsconfig,markdown,xml,scss,git,git+config,json,YAML",
+		img: "https://github-readme-stats.vercel.app/api/wakatime?username=@	@Jtorres&layout=compact&theme=tokyonight&hide_border=true&hide=text,other,binary,tsconfig,markdown,xml,scss,git,git+config,json,YAML",
 		spareImg: "",
+	},
+	{
+		id: 7,
+		title: "Currently building a JS Animation library",
+		description: "The Inside Scoop",
+		className:
+			"3xl:col-span-3 2xl:col-span-2 lg:col-span-3 md:col-span-7 md:row-span-2",
+		imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
+		titleClassName: "justify-center md:justify-start lg:justify-center",
+		img: `${assetUrl}/icons/ui/b5.svg`,
+		spareImg: `${assetUrl}/backgrounds/ui/grid.svg`,
 	},
 ];
 
 export const projects = [
 	{
 		id: 1,
-		title: "3D Solar System Planets to Explore",
-		des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-		img: "/p1.svg",
-		iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-		link: "https://github.com/adrianhajdin?tab=repositories",
+		title: "Sound Wave Analysis Project",
+		des: "Visualize sound waves, analyze decibel levels, and explore frequency spectrums using Python and Matplotlib.",
+		img: `${assetUrl}/covers/projects/sound-wave-analysis-project.png`,
+		lngIconLts: [
+			`${assetUrl}/icons/tech/py.svg`,
+			`${assetUrl}/icons/tech/numpy.svg`,
+			`${assetUrl}/icons/tech/matplotlib.svg`,
+		],
+		toolsIconLts: [
+			`${assetUrl}/icons/tech/jupyter.svg`,
+			`${assetUrl}/icons/tech/vscode.svg`,
+			`${assetUrl}/icons/tech/gitbash.svg`,
+			`${assetUrl}/icons/social/github.svg`,
+		],
+		link: "https://github.com/TorresjDev/Python-Sound-Wave-Analysis",
 	},
 	{
 		id: 2,
-		title: "Yoom - Video Conferencing App",
-		des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-		img: "/p2.svg",
-		iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-		link: "https://github.com/adrianhajdin/zoom-clone",
+		title: "Buff Hotel Management System",
+		des: "Manage hotel reservations, room statuses, and user authentication seamlessly using C# and .NET.",
+		img: `${assetUrl}/covers/projects/buff-hotel-system.png`,
+		lngIconLts: [
+			`${assetUrl}/icons/tech/csharp.svg`,
+			`${assetUrl}/icons/tech/dotnet.svg`,
+			`${assetUrl}/icons/tech/sql.svg`,
+		],
+		toolsIconLts: [
+			`${assetUrl}/icons/tech/mysql.svg`,
+			`${assetUrl}/icons/tech/nuget.svg`,
+			`${assetUrl}/icons/tech/vscode.svg`,
+			`${assetUrl}/icons/tech/gitbash.svg`,
+			`${assetUrl}/icons/social/github.svg`,
+		],
+		link: "https://github.com/TorresjDev/CSharp-Buff-Hotel-Management-System",
 	},
 	{
 		id: 3,
-		title: "AI Image SaaS - Canva Application",
-		des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-		img: "/p3.svg",
-		iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-		link: "https://github.com/adrianhajdin/ai_saas_app",
+		title: "Phaser 3 Platformer Game",
+		des: "A fun platformer game built using Phaser 3, where players collect coins, avoid bombs, and challenge their skills across dynamic game scenes.",
+		img: `${assetUrl}/covers/projects/phaser3game.png`,
+		lngIconLts: [
+			`${assetUrl}/icons/tech/js.svg`,
+			`${assetUrl}/icons/tech/html.svg`,
+			`${assetUrl}/icons/tech/css.svg`,
+			`${assetUrl}/icons/tech/nodejs.svg`,
+		],
+		toolsIconLts: [
+			`${assetUrl}/icons/tech/phaser-planet-web.svg`,
+			`${assetUrl}/icons/tech/npm.svg`,
+			`${assetUrl}/icons/tech/vscode.svg`,
+			`${assetUrl}/icons/tech/gitbash.svg`,
+			`${assetUrl}/icons/social/github.svg`,
+		],
+		link: "https://github.com/TorresjDev/JS-Phaser-Game",
 	},
 	{
 		id: 4,
-		title: "Animated Apple Iphone 3D Website",
-		des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-		img: "/p4.svg",
-		iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-		link: "https://github.com/adrianhajdin/iphone",
+		title: "Institute to Advance Diversity",
+		des: "A mentorship platform aimed at empowering youth through unparalleled mentorship, fostering diversity, and creating impactful connections.",
+		img: `${assetUrl}/covers/projects/instadvdiv.png`,
+		lngIconLts: [
+			`${assetUrl}/icons/tech/react.svg`,
+			`${assetUrl}/icons/tech/bootstrap.svg`,
+			`${assetUrl}/icons/tech/nodejs.svg`,
+			`${assetUrl}/icons/tech/csharp.svg`,
+			`${assetUrl}/icons/tech/dotnet.svg`,
+			`${assetUrl}/icons/tech/sql.svg`,
+		],
+		toolsIconLts: [
+			`${assetUrl}/icons/tech/postman.svg`,
+			`${assetUrl}/icons/tech/ssms.svg`,
+			`${assetUrl}/icons/tech/yarn.svg`,
+			`${assetUrl}/icons/tech/npm.svg`,
+			`${assetUrl}/icons/tech/vscode.svg`,
+			`${assetUrl}/icons/tech/vs.svg`,
+			`${assetUrl}/icons/tech/gitbash.svg`,
+			`${assetUrl}/icons/social/github.svg`,
+		],
+		link: "https://github.com/TorresjDev/FullStack-AdvDiversity",
+	},
+	{
+		id: 5,
+		title: "Rock, Paper, Scissors Game",
+		des: "Enjoy the timeless game of Rock, Paper, Scissors with dynamic scoring, quirky moves, and user-friendly gameplay. Built using C# and .NET.",
+		img: `${assetUrl}/covers/projects/rock-paper-scissors.png`,
+		lngIconLts: [
+			`${assetUrl}/icons/tech/csharp.svg`,
+			`${assetUrl}/icons/tech/dotnet.svg`,
+		],
+		toolsIconLts: [
+			`${assetUrl}/icons/tech/nuget.svg`,
+			`${assetUrl}/icons/tech/vscode.svg`,
+			`${assetUrl}/icons/tech/gitbash.svg`,
+			`${assetUrl}/icons/social/github.svg`,
+		],
+		link: "https://github.com/TorresjDev/CSharp-Rock-Paper-Scissors-Game",
 	},
 ];
 
@@ -202,7 +271,7 @@ export const companies = [
 export const workExperience = [
 	{
 		id: 1,
-		title: "Frontend Engineer Intern",
+		title: "WTAMU - Computer Information & Decision Management Tutor",
 		desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
 		className: "md:col-span-2",
 		thumbnail: "/exp1.svg",
@@ -233,14 +302,14 @@ export const workExperience = [
 export const socialMedia = [
 	{
 		id: 1,
-		img: "/git.svg",
+		img: `${assetUrl}/icons/social/github.svg`,
 	},
 	{
 		id: 2,
-		img: "/twit.svg",
+		img: `${assetUrl}/icons/social/twit.svg`,
 	},
 	{
 		id: 3,
-		img: "/link.svg",
+		img: `${assetUrl}/icons/social/linkedIn.svg`,
 	},
 ];

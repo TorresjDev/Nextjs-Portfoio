@@ -23,6 +23,7 @@ const config = {
 			padding: "2rem",
 			screens: {
 				"2xl": "1400px",
+				"3xl": "1900px",
 			},
 		},
 		extend: {
@@ -159,10 +160,6 @@ const config = {
 						transform: "translate(calc(-50% - 0.5rem))",
 					},
 				},
-			},
-			screens: {
-				"3xl": "1924px",
-				"2.5xl": "1600px",
 			},
 		},
 	},

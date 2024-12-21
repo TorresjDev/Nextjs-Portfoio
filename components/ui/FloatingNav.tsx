@@ -64,7 +64,7 @@ export const FloatingNav = ({
 					transition={{
 						duration: 0.2,
 					}}
-					className="flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-white/[0.4] bg-black-100 rounded-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-10 py-5 items-center justify-center space-x-4"
+					className="flex max-w-fit sticky sm:fixed top-10 inset-x-0 mx-auto border border-white/[0.4] bg-black-100 rounded-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-10 py-5 items-center justify-center space-x-4"
 				>
 					{navItems.map((navItem, idx) => {
 						const Icon = iconMapping[navItem.iconKey];

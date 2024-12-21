@@ -1,5 +1,7 @@
 {
-   "cSpell.words": [
-      "Bento"
-   ]
+	"cSpell.words": ["Bento"],
+	"editor.formatOnSave": true,
+	"reactSnippets.settings.prettierEnabled": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"notebook.defaultFormatter": "esbenp.prettier-vscode"
 }
