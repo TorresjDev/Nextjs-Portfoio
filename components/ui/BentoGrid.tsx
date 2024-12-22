@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
-import { BackgroundGradientAnimation } from "./GradientBg";
+// import { BackgroundGradientAnimation } from "./GradientBg";
 import animationData from "@/data/confetti.json";
 import { GlobeDemo } from "./GridGlobe";
 import { useState } from "react";
@@ -9,6 +10,11 @@ import Lottie from "react-lottie";
 import MagicButton from "./MagicButton";
 import { LuCopyCheck } from "react-icons/lu";
 import { IoCopyOutline } from "react-icons/io5";
+
+const BackgroundGradientAnimation = dynamic(
+	() => import("./GradientBg").then((mod) => mod.BackgroundGradientAnimation),
+	{ ssr: false, loading: () => <div>Loading gradient animation...</div> }
+);
 
 export const BentoGrid = ({
 	className,
@@ -54,6 +60,9 @@ export const BentoGridItem = ({
 		if (typeof navigator !== "undefined" && navigator.clipboard) {
 			navigator.clipboard.writeText("j.torres3.dev@gmail.com");
 			setCopied(true);
+		} else {
+			console.log("Clipboard not supported");
+			setCopied(false);
 		}
 	};
 	return (
