@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
 import { useThree, Object3DNode, Canvas, extend } from "@react-three/fiber";
@@ -14,7 +14,6 @@ declare module "@react-three/fiber" {
 extend({ ThreeGlobe });
 
 const RING_PROPAGATION_SPEED = 3;
-const aspect = 1.2;
 const cameraZ = 300;
 
 type Position = {
@@ -74,31 +73,27 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
 	const globeRef = useRef<ThreeGlobe | null>(null);
 
-	const defaultProps = {
-		pointSize: 1,
-		atmosphereColor: "#ffffff",
-		showAtmosphere: true,
-		atmosphereAltitude: 0.1,
-		polygonColor: "rgba(255,255,255,0.7)",
-		globeColor: "#1d072e",
-		emissive: "#000000",
-		emissiveIntensity: 0.1,
-		shininess: 0.9,
-		arcTime: 2000,
-		arcLength: 0.9,
-		rings: 1,
-		maxRings: 3,
-		...globeConfig,
-	};
+	const defaultProps = useMemo(
+		() => ({
+			pointSize: 1,
+			atmosphereColor: "#ffffff",
+			showAtmosphere: true,
+			atmosphereAltitude: 0.1,
+			polygonColor: "rgba(255,255,255,0.7)",
+			globeColor: "#1d072e",
+			emissive: "#000000",
+			emissiveIntensity: 0.1,
+			shininess: 0.9,
+			arcTime: 2000,
+			arcLength: 0.9,
+			rings: 1,
+			maxRings: 3,
+			...globeConfig,
+		}),
+		[globeConfig]
+	);
 
-	useEffect(() => {
-		if (globeRef.current) {
-			_buildData();
-			_buildMaterial();
-		}
-	}, [globeRef.current]);
-
-	const _buildMaterial = () => {
+	const _buildMaterial = useCallback(() => {
 		if (!globeRef.current) return;
 
 		const globeMaterial = globeRef.current.globeMaterial() as unknown as {
@@ -111,9 +106,15 @@ export function Globe({ globeConfig, data }: WorldProps) {
 		globeMaterial.emissive = new Color(globeConfig.emissive);
 		globeMaterial.emissiveIntensity = globeConfig.emissiveIntensity || 0.1;
 		globeMaterial.shininess = globeConfig.shininess || 0.9;
-	};
+	}, [
+		globeConfig.globeColor,
+		globeConfig.emissive,
+		globeConfig.emissiveIntensity,
+		globeConfig.shininess,
+		globeRef,
+	]);
 
-	const _buildData = () => {
+	const _buildData = useCallback(() => {
 		const arcs = data;
 		let points = [];
 		for (let i = 0; i < arcs.length; i++) {
@@ -146,25 +147,16 @@ export function Globe({ globeConfig, data }: WorldProps) {
 		);
 
 		setGlobeData(filteredPoints);
-	};
+	}, [data, defaultProps.pointSize]);
 
 	useEffect(() => {
-		if (globeRef.current && globeData) {
-			globeRef.current
-				.hexPolygonsData(countries.features)
-				.hexPolygonResolution(3)
-				.hexPolygonMargin(0.7)
-				.showAtmosphere(defaultProps.showAtmosphere)
-				.atmosphereColor(defaultProps.atmosphereColor)
-				.atmosphereAltitude(defaultProps.atmosphereAltitude)
-				.hexPolygonColor((e) => {
-					return defaultProps.polygonColor;
-				});
-			startAnimation();
+		if (globeRef.current) {
+			_buildData();
+			_buildMaterial();
 		}
-	}, [globeData]);
+	}, [_buildData, _buildMaterial]);
 
-	const startAnimation = () => {
+	const startAnimation = useCallback(() => {
 		if (!globeRef.current || !globeData) return;
 
 		globeRef.current
@@ -200,7 +192,30 @@ export function Globe({ globeConfig, data }: WorldProps) {
 			.ringRepeatPeriod(
 				(defaultProps.arcTime * defaultProps.arcLength) / defaultProps.rings
 			);
-	};
+	}, [data, defaultProps, globeRef, globeData]);
+
+	useEffect(() => {
+		if (globeRef.current && globeData) {
+			globeRef.current
+				.hexPolygonsData(countries.features)
+				.hexPolygonResolution(3)
+				.hexPolygonMargin(0.7)
+				.showAtmosphere(defaultProps.showAtmosphere)
+				.atmosphereColor(defaultProps.atmosphereColor)
+				.atmosphereAltitude(defaultProps.atmosphereAltitude)
+				.hexPolygonColor((e) => {
+					return defaultProps.polygonColor;
+				});
+			startAnimation();
+		}
+	}, [
+		globeData,
+		defaultProps.showAtmosphere,
+		defaultProps.atmosphereColor,
+		defaultProps.atmosphereAltitude,
+		defaultProps.polygonColor,
+		startAnimation,
+	]);
 
 	useEffect(() => {
 		if (!globeRef.current || !globeData) return;
@@ -221,11 +236,11 @@ export function Globe({ globeConfig, data }: WorldProps) {
 		return () => {
 			clearInterval(interval);
 		};
-	}, [globeRef.current, globeData]);
+	}, [data.length, globeData]);
 
 	return (
 		<>
-			<threeGlobe ref={globeRef} />
+			<threeGlobe ref={globeRef} position={[0, -45, 0]} />
 		</>
 	);
 }
@@ -237,7 +252,7 @@ export function WebGLRendererConfig() {
 		gl.setPixelRatio(window.devicePixelRatio);
 		gl.setSize(size.width, size.height);
 		gl.setClearColor(0xffaaff, 0);
-	}, []);
+	}, [gl, size.height, size.width]);
 
 	return null;
 }
@@ -246,8 +261,19 @@ export function World(props: WorldProps) {
 	const { globeConfig } = props;
 	const scene = new Scene();
 	scene.fog = new Fog(0xffffff, 400, 2000);
-	return (
-		<Canvas scene={scene} camera={new PerspectiveCamera(50, aspect, 180, 1800)}>
+
+	return typeof window !== "undefined" ? (
+		<Canvas
+			scene={scene}
+			camera={
+				new PerspectiveCamera(
+					33,
+					window.innerWidth / window.innerHeight,
+					0.1,
+					3000
+				)
+			}
+		>
 			<WebGLRendererConfig />
 			<ambientLight color={globeConfig.ambientLight} intensity={0.6} />
 			<directionalLight
@@ -267,14 +293,35 @@ export function World(props: WorldProps) {
 			<OrbitControls
 				enablePan={false}
 				enableZoom={false}
-				minDistance={cameraZ}
-				maxDistance={cameraZ}
+				minDistance={cameraZ * 0.9}
+				maxDistance={cameraZ * 1.2}
 				autoRotateSpeed={1}
 				autoRotate={true}
-				minPolarAngle={Math.PI / 3.5}
+				minPolarAngle={Math.PI / 2}
 				maxPolarAngle={Math.PI - Math.PI / 3}
 			/>
 		</Canvas>
+	) : (
+		<div
+			style={{
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center",
+				height: "100vh",
+				backgroundColor: "#f8f9fa",
+				color: "#495057",
+				fontFamily: "Arial, sans-serif",
+				fontSize: "1.2rem",
+				textAlign: "center",
+			}}
+		>
+			<p>
+				Oops! 🌍
+				<br />
+				Sorry, we couldn&apos;t load the globe right now. This feature is
+				temporarily unavailable. Please try again later!
+			</p>
+		</div>
 	);
 }
 
