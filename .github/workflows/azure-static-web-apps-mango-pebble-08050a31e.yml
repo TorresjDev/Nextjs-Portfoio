@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
+      - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
@@ -29,7 +33,7 @@ jobs:
           action: "upload"
           app_location: "/" # Update this if your app is in a subfolder
           api_location: "" # Leave blank if you don't have an API
-          output_location: "out" # Replace "out" with your actual build output folder (e.g., ".next" for Next.js)
+          output_location: ".next" # Replace "out" with your actual build output folder (e.g., ".next" for Next.js)
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
