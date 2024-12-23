@@ -48,7 +48,7 @@ const Footer = () => {
 								autoplay: downloaded,
 								animationData: animationData,
 								rendererSettings: {
-									preserveAspectRatio: "xSmYSm slice",
+									preserveAspectRatio: "xMidYMid slice",
 								},
 							}}
 						/>
