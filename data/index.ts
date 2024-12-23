@@ -271,31 +271,32 @@ export const companies = [
 export const workExperience = [
 	{
 		id: 1,
-		title: "WTAMU - Computer Information & Decision Management Tutor",
-		desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+		title: "West Texas A&M University - CIDM Programmer & Tutor",
+		desc: "Built a ReactJS web app and tutored CIDM programming courses.",
 		className: "md:col-span-2",
-		thumbnail: "/exp1.svg",
+		thumbnail: "https://www.wtamu.edu/_files/images/_dev/wt-logo-main.webp",
 	},
 	{
 		id: 2,
-		title: "Mobile App Dev - JSM Tech",
-		desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-		className: "md:col-span-2", // change to md:col-span-2
-		thumbnail: "/exp2.svg",
+		title: "Sabio Enterprises Inc - Software Engineer Instructor",
+		desc: "Led software programming reviews and mentored developers in JS, React, C#, and SQL.",
+		className: "md:col-span-2",
+		thumbnail: "https://sabio.la/Images/logos/sabio-logo_Optimized.png",
 	},
 	{
 		id: 3,
-		title: "Freelance App Dev Project",
-		desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-		className: "md:col-span-2", // change to md:col-span-2
-		thumbnail: "/exp3.svg",
+		title: "Institute to Advance Diversity - Software Engineer",
+		desc: "Built components with ASP.NET and React, optimizing user experience.",
+		className: "md:col-span-2",
+		thumbnail: `${assetUrl}/icons/social/advdiv.svg`,
 	},
 	{
 		id: 4,
-		title: "Lead Frontend Developer",
-		desc: "Developed and maintained user-facing features using modern frontend technologies.",
+		title: "U.S. Army - Airborne Paratrooper",
+		desc: "Led multinational teams in dynamic operations, fostering teamwork.",
 		className: "md:col-span-2",
-		thumbnail: "/exp4.svg",
+		thumbnail:
+			"https://www.goarmy.com/etc.clientlibs/goarmy/clientlibs/clientlib-site/resources/static/icons/logos/army-dark-logo.svg",
 	},
 ];
 
@@ -303,13 +304,11 @@ export const socialMedia = [
 	{
 		id: 1,
 		img: `${assetUrl}/icons/social/github.svg`,
+		link: "https://github.com/TorresjDev",
 	},
 	{
 		id: 2,
-		img: `${assetUrl}/icons/social/twit.svg`,
-	},
-	{
-		id: 3,
 		img: `${assetUrl}/icons/social/linkedIn.svg`,
+		link: "https://www.linkedin.com/in/torresjdev/",
 	},
 ];
