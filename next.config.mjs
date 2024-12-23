@@ -1,8 +1,6 @@
 import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
-const nextConfig = {  output: "export",
-	basePath: "/Nextjs-Portfoio", // Replace with your repository name
-	assetPrefix: "/Nextjs-Portfoio",};
+const nextConfig = {};
 
 export default withSentryConfig(
 	nextConfig,
