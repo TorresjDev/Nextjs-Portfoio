@@ -2,7 +2,7 @@
 "use client";
 import React, { useState } from "react";
 import MagicButton from "./ui/MagicButton";
-import { FaLocationArrow } from "react-icons/fa";
+// import { FaLocationArrow } from "react-icons/fa";
 import animationData from "@/data/confetti.json";
 import { assetUrl, socialMedia } from "@/data";
 import { IoDownload } from "react-icons/io5";
