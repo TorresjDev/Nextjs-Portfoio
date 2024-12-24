@@ -15,19 +15,19 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - name: Setup Node.js
+    - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 20
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-        with:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+      with:
           submodules: true
           lfs: false
 
-      - name: Build and Deploy to Azure
-        uses: Azure/static-web-apps-deploy@v1
-        with:
+    - name: Build and Deploy to Azure
+      uses: Azure/static-web-apps-deploy@v1
+      with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_PEBBLE_08050A31E }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (e.g., PR comments)
           action: "upload"
@@ -40,8 +40,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Close Pull Request Job
     steps:
-      - name: Close Pull Request
-        uses: Azure/static-web-apps-deploy@v1
-        with:
+    - name: Close Pull Request
+      uses: Azure/static-web-apps-deploy@v1
+      with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_PEBBLE_08050A31E }}
           action: "close"
+          app_location: "/"
+
