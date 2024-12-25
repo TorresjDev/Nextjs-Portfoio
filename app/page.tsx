@@ -1,5 +1,5 @@
 import Approach from "@/components/Approach";
-// import Clients from "@/components/Clients";
+import Clients from "@/components/Clients";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 import Grid from "@/components/Grid";
@@ -10,13 +10,13 @@ import { navItems } from "@/data";
 
 export default function Home() {
 	return (
-		<main className="relative bg-black-100 flex justify-center items-center flex-col  mx-auto sm:px-10 px-5">
-			<div className="max-w-[75%] sm:max-w-[80%] w-full">
+		<main className="relative bg-black-100 flex flex-col justify-center items-center mx-auto sm:px-10 px-5">
+			<div className="max-w-[80%] sm:max-w-[90%] w-full">
 				<FloatingNav navItems={navItems} />
 				<Hero />
 				<Grid />
 				<RecentProjects />
-				{/* <Clients /> */}
+				<Clients />
 				<Experience />
 				<Approach />
 				<Footer />

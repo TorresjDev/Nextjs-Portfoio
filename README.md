@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌟 Jesus Torres: Portfolio Project
 
-## Getting Started
+Welcome to my portfolio project! This is a cutting-edge **Next.js** application showcasing my skills, projects, and experience. 🚀 Built with a blend of modern frameworks and tools, the portfolio serves as a central hub for my professional journey and creative work. 
 
-First, run the development server:
+---
 
+## ✨ Project Overview
+This portfolio is designed to:
+- 🌐 Highlight my recent projects and professional experience.
+- 🎨 Provide a sleek, interactive design with responsive layouts.
+- 🔍 Incorporate dynamic elements for an engaging user experience.
+
+---
+
+## 🌐 Live Website
+Check out the live website here: [Portfolio Website](https://mango-pebble-08050a31e.4.azurestaticapps.net/) 🌍
+
+---
+
+## 📚 Key Features
+
+- **Modern Design**: Powered by **Tailwind CSS**, the portfolio boasts a clean and responsive user interface.
+- **Dynamic Navigation**: Features a floating navigation bar built with **Framer Motion** for smooth animations.
+- **3D Visualizations**: Integrates **Three.js** and **@react-three/fiber** for immersive 3D elements.
+- **Theme Switching**: Supports light and dark mode with **next-themes** for user personalization.
+- **Error Monitoring**: Uses **Sentry** for tracking and fixing errors seamlessly.
+
+---
+
+## 🛠️ Technologies Used
+
+Here are the main technologies and libraries powering this portfolio:
+
+### Core Frameworks
+- **Next.js** 🌟
+- **React** ⚛️
+
+### Styling & Animations
+- **Tailwind CSS** 🎨
+- **Framer Motion** 🎥
+
+### 3D Graphics
+- **Three.js** 🌌
+- **@react-three/fiber** 🛠️
+
+### Utility Libraries
+- **clsx** 🛠️
+- **tailwind-merge** 🔀
+- **postcss** 💅
+
+### Development Tools
+- **TypeScript** 💻
+- **ESLint** 🧐
+
+### Monitoring
+- **@sentry/nextjs** 🛡️
+
+---
+
+## 🛠️ Installation & Setup
+
+To run this project locally, follow these steps:
+
+### 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/username/portfolio.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Start the Development Server
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 4. Open in Browser
+Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🔧 Configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Environment Variables
+To enable error monitoring and other advanced features, set up the following environment variables:
+- `NEXT_PUBLIC_SENTRY_DSN`: Your Sentry Data Source Name.
+- `NEXT_PUBLIC_API_URL`: The base API URL (if applicable).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Deployment Options
 
-## Deploy on Vercel
+#### Azure Static Web Apps 🌐
+This portfolio is live on Azure Static Web Apps for seamless global availability.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### GitHub Pages 🖥️
+Also configured for deployment via GitHub Pages to ensure redundancy.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+## 🚀 Future Improvements
+
+Some planned enhancements include:
+- 🌟 Adding more 3D visualizations.
+- 📈 Expanding project case studies.
+- 🔒 Implementing advanced security features.
+
+---
+
+## 🤝 Contributions
+This project is personal but open to constructive feedback! Feel free to fork, star ⭐, or create an issue for suggestions.
+
+---
+
+### 📧 Contact Me
+If you'd like to connect, reach out via email or check out my social media profiles on the site.
+
+---
+
+Built with ❤️ using **Next.js**, **Tailwind**, and a passion for creativity!
