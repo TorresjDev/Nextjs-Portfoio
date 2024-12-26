@@ -33,9 +33,11 @@ yarn-error.log*
 # vercel
 .vercel
 
-# typescript
+# typescript - tsx / ts
 *.tsbuildinfo
 next-env.d.ts
+RPv1.tsx
+3d-pinv1.tsx
 
 # Sentry Config File
 .env.sentry-build-plugin
