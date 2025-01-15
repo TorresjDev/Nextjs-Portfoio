@@ -8,7 +8,7 @@ const RecentProjects = () => {
 	return (
 		<div className="py-20 w-full" id="projects">
 			<h1 className="heading text-center">
-				Highlighting <span className="text-cyan-400">Recent Innovations</span>
+				Highlighting Recent <span className="text-cyan-400">Innovations</span>
 			</h1>
 			<div
 				className="flex flex-wrap items-center justify-evenly p-4 mt-10 gap-x-10 gap-y-20 xl:gap-y-10 2xl:gap-y-6
@@ -38,7 +38,7 @@ const RecentProjects = () => {
 										className="z-10 absolute bottom-0 object-contain max-w-full w-auto max-h-full items-center justify-between border border-white/[0.6]"
 									/>
 								</div>
-								<h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1 px-1">
+								<h1 className="font-bold text-cyan-400 lg:text-2xl md:text-xl text-base line-clamp-1 px-1">
 									{title}
 								</h1>
 

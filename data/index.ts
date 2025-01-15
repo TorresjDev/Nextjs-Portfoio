@@ -1,4 +1,4 @@
-export const assetUrl = "https://torresjdev.github.io/assets-host/assets";
+export const assetUrl = "https://torresjdev.github.io/Nextjs-Asset-Host/assets";
 
 export const navItems = [
 	{ name: "About", link: "#about", iconKey: "FaInfoCircle" },

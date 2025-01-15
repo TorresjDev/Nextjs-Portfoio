@@ -2,7 +2,6 @@
 "use client";
 import React, { useState } from "react";
 import MagicButton from "./ui/MagicButton";
-// import { FaLocationArrow } from "react-icons/fa";
 import animationData from "@/data/confetti.json";
 import { assetUrl, socialMedia } from "@/data";
 import { IoDownload } from "react-icons/io5";
@@ -16,72 +15,147 @@ const Footer = () => {
 	};
 
 	return (
-		<footer className="w-full pt-20 pb-20 mb-3 relative" id="contact">
-			<div className="absolute inset-0">
-				<img
-					src={`${assetUrl}/backgrounds/ui/footer-grid.svg`}
-					alt="grid"
-					className="w-full h-full object-cover opacity-50 "
-				/>
-			</div>
-			<div className="relative z-10 flex flex-col items-center text-center">
-				<h1 className="heading lg:max-w-[45vw]">
-					Ready to take <span className="text-cyan-600">your</span> digital
-					presence to the next level?
-				</h1>
-				<p className="text-white-200 md:mt-10 my-5 text-center">
-					Reach out to me today and let&apos;s discuss how I can help you
-					achieve your goals.
-				</p>
-				{/* <a href="mailto:j.torres3.dev@gmail.com">
-					<MagicButton
-						title="Let's get in touch"
-						icon={<FaLocationArrow />}
-						position="right"
+		<footer className="w-full text-white py-16 px-8 relative">
+			<div className="container mx-auto flex flex-col gap-12">
+				<div className="absolute inset-0 z-0">
+					<img
+						src={`${assetUrl}/backgrounds/ui/footer-grid.svg`}
+						alt="grid"
+						className="w-full h-full object-cover opacity-50 "
 					/>
-				</a> */}
-				<a href="/Jesus_Torres_Resume.pdf" download="Jesus_Torres_Resume.pdf">
-					<div className="absolute inset-0 flex items-center justify-center z-50 pointer-events-none h-2/6 top-3/4">
-						<Lottie
-							options={{
-								loop: downloaded,
-								autoplay: downloaded,
-								animationData: animationData,
-								rendererSettings: {
-									preserveAspectRatio: "xMidYMid slice",
-								},
-							}}
-						/>
+				</div>
+				{/* Top Section */}
+				<div className="flex flex-col md:flex-row justify-between items-center gap-12">
+					<div className="text-center md:text-left md:w-1/2">
+						<h1 className="text-3xl font-bold text-cyan-400 mb-4">
+							Ready to Collaborate?
+						</h1>
+						<p className="text-sm md:text-base text-gray-300">
+							I’m passionate about creating modern, user-friendly digital
+							experiences. Let’s connect and explore how I can help bring your
+							ideas to life.
+						</p>
 					</div>
-					<MagicButton
-						title={downloaded ? "Downloaded!" : "Download Resume"}
-						icon={<IoDownload />}
-						position="left"
-						handleClick={handleDownload}
-						otherClasses="!bg-[#161a31]"
-					/>{" "}
-				</a>
-			</div>
-			<div className="relative z-10 flex mt-16 md:flex-row flex-col items-center justify-between">
-				<p className="md:text-base text-sm md:font-normal font-light">
-					Copyright © 2024 Jesus
-				</p>
-				<div className="flex items-center md:gap-3 gap-6">
-					{socialMedia.map((profile) => (
-						<div
-							key={profile.id}
-							className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-150 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
+					<div className="flex flex-col items-center md:w-1/2">
+						<a
+							href="/Jesus_Torres_Resume.pdf"
+							download="Jesus_Torres_Resume.pdf"
+							className=" pt-3"
 						>
-							<a href={profile.link} target="_blank" rel="noreferrer">
-								<img
-									src={profile.img}
-									alt={profile.id.toString()}
-									width={20}
-									height={20}
-								/>
-							</a>
+							<MagicButton
+								title={downloaded ? "Downloaded!" : "Download Resume"}
+								icon={<IoDownload />}
+								position="left"
+								handleClick={handleDownload}
+								otherClasses=" hover:text-cyan-400 "
+							/>
+						</a>
+						<div className="w-24 h-24">
+							<Lottie
+								options={{
+									loop: downloaded,
+									autoplay: downloaded,
+									animationData: animationData,
+									rendererSettings: {
+										preserveAspectRatio: "xMidYMid slice",
+									},
+								}}
+							/>
 						</div>
-					))}
+					</div>
+				</div>
+
+				{/* Informative Links Section */}
+				<div className="grid grid-cols-1 md:grid-cols-4 gap-8 z-10">
+					{/* About Me */}
+					<div>
+						<h2 className="text-lg font-semibold text-cyan-400 mb-4">
+							About Me
+						</h2>
+						<p className="text-sm text-gray-300">
+							Hi, I’m Jesus Torres, a developer with a knack for building
+							innovative web applications using modern frameworks like Next.js
+							and Tailwind CSS.
+						</p>
+					</div>
+
+					{/* Quick Links */}
+					<div>
+						<h2 className="text-lg font-semibold text-cyan-400 mb-4">
+							Quick Links
+						</h2>
+						<ul className="space-y-2 text-sm text-gray-300">
+							<li>
+								<a href="#about" className="hover:text-cyan-400">
+									About Me
+								</a>
+							</li>
+							<li>
+								<a href="#projects" className="hover:text-cyan-400">
+									My Projects
+								</a>
+							</li>
+							<li>
+								<a href="#contact" className="hover:text-cyan-400">
+									Contact Me
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					{/* Connect with Me */}
+					<div>
+						<h2 className="text-lg font-semibold text-cyan-400 mb-4">
+							Connect with Me
+						</h2>
+						<div className="flex gap-4">
+							{socialMedia.map((profile) => (
+								<a
+									key={profile.id}
+									href={profile.link}
+									target="_blank"
+									rel="noreferrer"
+									className="w-10 h-10 flex items-center justify-center bg-black-300 rounded-lg hover:bg-cyan-400 transition"
+								>
+									<img
+										src={profile.img}
+										alt={profile.id.toString()}
+										width={20}
+										height={20}
+									/>
+								</a>
+							))}
+						</div>
+					</div>
+
+					{/* Contact */}
+					<div>
+						<h2 className="text-lg font-semibold text-cyan-400 mb-4">
+							Contact
+						</h2>
+						<ul className="space-y-2 text-sm text-gray-300">
+							<li>
+								<a
+									href="mailto:j.torres3.dev@gmail.com"
+									className="hover:text-cyan-400"
+								>
+									j.torres3.dev@gmail.com
+								</a>
+							</li>
+							<li>Based in Texas, USA</li>
+						</ul>
+					</div>
+				</div>
+
+				{/* Bottom Section */}
+				<div className="border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center">
+					<p className="text-sm text-gray-400">
+						© 2025 Jesus Torres. All Rights Reserved.
+					</p>
+					<p className="text-sm text-gray-400">
+						Powered by <span className="text-cyan-400">Next.js</span> and{" "}
+						<span className="text-cyan-400">Tailwind CSS</span>.
+					</p>
 				</div>
 			</div>
 		</footer>
