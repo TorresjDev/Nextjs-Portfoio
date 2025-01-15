@@ -6,11 +6,13 @@ import { cn } from "@/lib/utils";
 export const TextGenerateEffect = ({
 	words,
 	className,
+	highlightWords = [],
 	filter = true,
 	duration = 0.5,
 }: {
 	words: string;
 	className?: string;
+	highlightWords?: string[];
 	filter?: boolean;
 	duration?: number;
 }) => {
@@ -34,13 +36,13 @@ export const TextGenerateEffect = ({
 		return (
 			<motion.div ref={scope}>
 				{wordsArray.map((word, idx) => {
+					const isHighlighted = highlightWords.includes(word);
+
 					return (
 						<motion.span
 							key={word + idx}
 							className={`${
-								idx > 1 && idx % 2 === 0
-									? "text-cyan-400"
-									: "dark:text-white text-black"
+								isHighlighted ? "text-cyan-400" : "dark:text-white text-black"
 							} opacity-0`}
 							style={{
 								filter: filter ? "blur(10px)" : "none",
