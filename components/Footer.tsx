@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import MagicButton from "./ui/MagicButton";
 import animationData from "@/data/confetti.json";
 import { assetUrl, socialMedia } from "@/data";
-import { IoDownload } from "react-icons/io5";
+import { MdDownload, MdDownloadDone } from "react-icons/md";
 import Lottie from "react-lottie";
 
 const Footer = () => {
@@ -17,7 +17,7 @@ const Footer = () => {
 	return (
 		<footer className="w-full text-white py-16 px-8 relative">
 			<div className="container mx-auto flex flex-col gap-12">
-				<div className="absolute inset-0 z-0">
+				<div className="absolute inset-0 z-0 ">
 					<img
 						src={`${assetUrl}/backgrounds/ui/footer-grid.svg`}
 						alt="grid"
@@ -37,20 +37,9 @@ const Footer = () => {
 						</p>
 					</div>
 					<div className="flex flex-col items-center md:w-1/2">
-						<a
-							href="/Jesus_Torres_Resume.pdf"
-							download="Jesus_Torres_Resume.pdf"
-							className=" pt-3"
+						<span
+							className={`absolute bottom-[16rem] right-[27rem] z-40 w-44 h-44`}
 						>
-							<MagicButton
-								title={downloaded ? "Downloaded!" : "Download Resume"}
-								icon={<IoDownload />}
-								position="left"
-								handleClick={handleDownload}
-								otherClasses=" hover:text-cyan-400 "
-							/>
-						</a>
-						<div className="w-24 h-24">
 							<Lottie
 								options={{
 									loop: downloaded,
@@ -61,7 +50,20 @@ const Footer = () => {
 									},
 								}}
 							/>
-						</div>
+						</span>
+						<a
+							href="/Jesus_Torres_Resume.pdf"
+							download="Jesus_Torres_Resume.pdf"
+							className=" pt-3"
+						>
+							<MagicButton
+								title={downloaded ? "Downloaded!" : "Download Resume"}
+								icon={downloaded ? <MdDownloadDone /> : <MdDownload />}
+								position="left"
+								handleClick={handleDownload}
+								otherClasses=" hover:text-cyan-400 "
+							/>
+						</a>
 					</div>
 				</div>
 
