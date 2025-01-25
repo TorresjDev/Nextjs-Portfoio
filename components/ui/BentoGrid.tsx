@@ -8,8 +8,7 @@ import { GlobeDemo } from "./GridGlobe";
 import { useState } from "react";
 import Lottie from "react-lottie";
 import MagicButton from "./MagicButton";
-import { LuCopyCheck } from "react-icons/lu";
-import { IoCopyOutline } from "react-icons/io5";
+import { MdDownload, MdDownloadDone } from "react-icons/md";
 
 const BackgroundGradientAnimation = dynamic(
 	() => import("./GradientBg").then((mod) => mod.BackgroundGradientAnimation),
@@ -54,15 +53,15 @@ export const BentoGridItem = ({
 	spareImg?: string;
 	id: number;
 }) => {
-	const [copied, setCopied] = useState(false);
+	const [downloaded, setDownload] = useState(false);
 
 	const handleCopy = () => {
 		if (typeof navigator !== "undefined" && navigator.clipboard) {
 			navigator.clipboard.writeText("j.torres3.dev@gmail.com");
-			setCopied(true);
+			setDownload(true);
 		} else {
 			console.log("Clipboard not supported");
-			setCopied(false);
+			setDownload(false);
 		}
 	};
 	return (
@@ -128,12 +127,12 @@ export const BentoGridItem = ({
 					{id === 2 && <GlobeDemo />}
 
 					{id === 4 && (
-						<div className="mt-5 relative">
-							<div className={`absolute -bottom-5 right-0`}>
+						<div className="mt-5 relative -b">
+							<div className={`absolute -bottom-16 right-0 z-40`}>
 								<Lottie
 									options={{
-										loop: copied,
-										autoplay: copied,
+										loop: downloaded,
+										autoplay: downloaded,
 										animationData: animationData,
 										rendererSettings: {
 											preserveAspectRatio: "xMidYMid slice",
@@ -141,14 +140,19 @@ export const BentoGridItem = ({
 									}}
 								/>
 							</div>
-
-							<MagicButton
-								title={copied ? "Email copied" : "Copy my email"}
-								icon={copied ? <LuCopyCheck /> : <IoCopyOutline />}
-								position="left"
-								otherClasses="!bg-[#161a31"
-								handleClick={handleCopy}
-							/>
+							<a
+								href="/Jesus_Torres_Resume.pdf"
+								download="Jesus_Torres_Resume.pdf"
+								className=" pt-3"
+							>
+								<MagicButton
+									title={downloaded ? "Resume Downloaded" : "Download Resume"}
+									icon={downloaded ? <MdDownloadDone /> : <MdDownload />}
+									position="left"
+									otherClasses="!bg-[#161a31"
+									handleClick={handleCopy}
+								/>{" "}
+							</a>
 						</div>
 					)}
 				</div>

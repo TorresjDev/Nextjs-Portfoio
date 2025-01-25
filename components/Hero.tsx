@@ -25,22 +25,23 @@ const Hero = () => {
 
 			<div className="flex justify-center relative my-20 z-10">
 				<div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-					<h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-90">
+					<h1 className="uppercase tracking-widest text-lg text-center text-yellow-500 max-w-90 pb-1">
 						Software Developer
+					</h1>
+					<h2 className="uppercase tracking-widest text-sm text-center text-blue-100 max-w-90 pt-1">
+						Jesus Torres
 					</h2>
 					<TextGenerateEffect
 						className="text-center text-[40px] md:text-5xl ld:text-6xl"
-						words="Transforming creative visions into functional solutions through code"
-						highlightWords={["visions", "functional", "code"]}
+						words="Creating innovative solutions using computer information technologies"
+						highlightWords={[
+							"solutions",
+							"computer",
+							"information",
+							"technology",
+						]}
 					/>
 
-					<p className="text-center mb-4 text-sm md:tracking-wider md:text-lg lg:text-2xl ">
-						Hi, I&apos;m Jesus Torres, a passionate full-stack developer in
-						Texas, USA.
-						<br /> My expertise spans modern technologies and frameworks to
-						build fast, responsive, and accessible digital experiences that
-						blend functionality with stunning user interfaces.
-					</p>
 					<a href="#projects">
 						<MagicButton
 							title="Show my work"

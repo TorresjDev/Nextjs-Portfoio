@@ -24,40 +24,29 @@ export const gridItems = [
 		title: "Adaptable to global time zones",
 		description:
 			"Working effectively across regions for smooth project execution.",
-		className: "lg:col-span-3 md:col-span-4 md:row-span-3",
+		className: "lg:col-span-3 md:col-span-3 md:row-span-3",
 		imgClassName: "",
 		titleClassName: "justify-start",
 		img: "",
 		spareImg: "",
 	},
-	// {
-	// 	id: 3,
-	// 	title: "Modern and versatile tech stack",
-	// 	description: "Proficient in these lanuages and frameworks.",
-	// 	className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-	// 	imgClassName: "",
-	// 	titleClassName: "justify-center",
-	// 	techStack1: ["JavaScript", "TypeScript", "C#", "Python"],
-	// 	techStack2: [".Net", "React.js", "Next.js", "Node.js"],
-	// 	img: "",
-	// 	spareImg: "",
-	// 	objInfo: {},
-	// },
 	{
 		id: 3,
-		title: "Current programming languages use",
+		title: "",
 		description: "",
-		className: "lg:col-span-3 md:col-span-3 md:row-span-2",
-		imgClassName: "",
-		titleClassName: "justify-start",
-		img: `${assetUrl}/backgrounds/ui/grid.svg`,
-		spareImg: `${assetUrl}/icons/ui/b4.svg`,
+		className:
+			"3xl:col-span-2 2xl:col-span-3 md:col-span-4 md:row-span-2 !bg-transparent !border-none",
+		imgClassName:
+			"sm:h-full sm:w-full justify-self-center rounded-3xl border border-white/[0.2] h-3/4",
+		titleClassName: "",
+		img: "https://github-readme-stats.vercel.app/api/wakatime?username=@	@Jtorres&layout=compact&theme=tokyonight&hide_border=true&hide=text,other,binary,tsconfig,markdown,xml,scss,git,git+config,json,YAML,image+(svg),mdx",
+		spareImg: "",
 	},
 	{
 		id: 4,
-		title: "Do you want to start a project together?",
+		title: "Contact me?",
 		description: "",
-		className: "lg:col-span-4 md:col-span-3 sm:row-span-1",
+		className: "lg:col-span-4 md:col-span-4 sm:row-span-1 text-border-1",
 		imgClassName: "",
 		titleClassName: "justify-center md:max-w-full max-w-60 text-center",
 		img: "",
@@ -65,6 +54,17 @@ export const gridItems = [
 	},
 	{
 		id: 5,
+		title: "Currently building a JS Animation library",
+		description: "The Inside Scoop",
+		className:
+			"3xl:col-span-6 2xl:col-span-5 lg:col-span-5 md:col-span-4 md:row-span-2",
+		imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
+		titleClassName: "justify-center md:justify-start lg:justify-center",
+		img: `${assetUrl}/icons/ui/b5.svg`,
+		spareImg: `${assetUrl}/backgrounds/ui/grid.svg`,
+	},
+	{
+		id: 6,
 		title: "",
 		description: "",
 		className:
@@ -74,29 +74,6 @@ export const gridItems = [
 		titleClassName: "",
 		img: "https://github-readme-stats.vercel.app/api/top-langs/?username=TorresjDev&&theme=tokyonight&layout=compact&hide=jupyter+notebook&hide_border=true",
 		spareImg: "",
-	},
-	{
-		id: 6,
-		title: "",
-		description: "",
-		className:
-			"3xl:col-span-2 2xl:col-span-3 md:col-span-4 md:row-span-2 !bg-transparent !border-none",
-		imgClassName:
-			"sm:h-full justify-self-center rounded-3xl border border-white/[0.2] h-3/4",
-		titleClassName: "",
-		img: "https://github-readme-stats.vercel.app/api/wakatime?username=@	@Jtorres&layout=compact&theme=tokyonight&hide_border=true&hide=text,other,binary,tsconfig,markdown,xml,scss,git,git+config,json,YAML",
-		spareImg: "",
-	},
-	{
-		id: 7,
-		title: "Currently building a JS Animation library",
-		description: "The Inside Scoop",
-		className:
-			"3xl:col-span-3 2xl:col-span-2 lg:col-span-3 md:col-span-7 md:row-span-2",
-		imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-		titleClassName: "justify-center md:justify-start lg:justify-center",
-		img: `${assetUrl}/icons/ui/b5.svg`,
-		spareImg: `${assetUrl}/backgrounds/ui/grid.svg`,
 	},
 ];
 
