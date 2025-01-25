@@ -14,14 +14,14 @@ const RecentProjects = () => {
 					({ id, title, des, img, lngIconLts, toolsIconLts, link }) => (
 						<div
 							key={id}
-							className="h-[39rem] sm:h-[36rem] lg:h-[38rem] xl:h-[39rem] flex items-center justify-center w-full max-w-[40vw] xl:max-w-[38vw] my-4 sm:my-14"
+							className="h-[39rem] sm:h-[36rem] lg:h-[24rem] xl:h-[27rem] 2xl:h-[30rem] 3xl:h-[33rem] flex items-center justify-center w-full max-w-[40vw] lg:max-w-[36vw] xl:max-w-[38vw]  my-4 sm:my-14"
 						>
 							<PinContainer
 								title={link}
 								href={link}
 								className="mx-auto w-full items-center justify-center"
 							>
-								<div className="relative flex items-center justify-center sm:w-[30rem] xl:w-[33vw] w-[80vw] overflow-hidden h-[30vh] sm:h-[33vh] my-12">
+								<div className="w-[80vw] sm:w-[30rem] lg:w-[27rem] xl:w-[36vw] relative flex items-center justify-center overflow-hidden h-[30vh] sm:h-[33vh] my-12">
 									<div className="relative w-auto h-full overflow-hidden lg:rounded-3xl items-center justify-between bg-[#13162d]">
 										<img
 											src={`${assetUrl}/backgrounds/abstract/bg.png`}

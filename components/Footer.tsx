@@ -38,7 +38,7 @@ const Footer = () => {
 					</div>
 					<div className="flex flex-col items-center md:w-1/2">
 						<span
-							className={`absolute bottom-[16rem] right-[27rem] z-40 w-44 h-44`}
+							className={`absolute bottom-[19rem] right-[16rem] z-40 w-44 h-44`}
 						>
 							<Lottie
 								options={{
@@ -57,7 +57,7 @@ const Footer = () => {
 							className=" pt-3"
 						>
 							<MagicButton
-								title={downloaded ? "Downloaded!" : "Download Resume"}
+								title={downloaded ? "Resume Downloaded!" : "Download Resume"}
 								icon={downloaded ? <MdDownloadDone /> : <MdDownload />}
 								position="left"
 								handleClick={handleDownload}

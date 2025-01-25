@@ -35,9 +35,9 @@ export const gridItems = [
 		title: "",
 		description: "",
 		className:
-			"3xl:col-span-2 2xl:col-span-3 md:col-span-4 md:row-span-2 !bg-transparent !border-none",
+			"lg:col-span-3 md:col-span-4 md:row-span-2 !bg-transparent !border-none",
 		imgClassName:
-			"sm:h-full sm:w-full justify-self-center rounded-3xl border border-white/[0.2] h-3/4",
+			"h-full xl:h-[80%] w-full justify-self-center rounded-3xl border border-white/[0.2] h-3/4",
 		titleClassName: "",
 		img: "https://github-readme-stats.vercel.app/api/wakatime?username=@	@Jtorres&layout=compact&theme=tokyonight&hide_border=true&hide=text,other,binary,tsconfig,markdown,xml,scss,git,git+config,json,YAML,image+(svg),mdx",
 		spareImg: "",
@@ -56,8 +56,7 @@ export const gridItems = [
 		id: 5,
 		title: "Currently building a JS Animation library",
 		description: "The Inside Scoop",
-		className:
-			"3xl:col-span-6 2xl:col-span-5 lg:col-span-5 md:col-span-4 md:row-span-2",
+		className: "md:col-span-4 md:row-span-2",
 		imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
 		titleClassName: "justify-center md:justify-start lg:justify-center",
 		img: `${assetUrl}/icons/ui/b5.svg`,
