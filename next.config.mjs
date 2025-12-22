@@ -1,6 +1,9 @@
 import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	// Enable static export for Azure Static Web Apps
+	output: 'export',
+	
 	// Reduce dev compilation overhead
 	experimental: {
 		optimizePackageImports: ["framer-motion", "three", "@react-three/drei", "react-icons"],

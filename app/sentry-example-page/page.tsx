@@ -49,14 +49,13 @@ export default function Page() {
             margin: "18px",
           }}
           onClick={async () => {
+            // Throw a client-side error for Sentry testing
+            // Note: API route removed due to static export
             await Sentry.startSpan({
               name: 'Example Frontend Span',
               op: 'test'
             }, async () => {
-              const res = await fetch("/api/sentry-example-api");
-              if (!res.ok) {
-                throw new Error("Sentry Example Frontend Error");
-              }
+              throw new Error("Sentry Example Frontend Error");
             });
           }}
         >
