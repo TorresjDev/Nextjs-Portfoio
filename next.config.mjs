@@ -59,6 +59,14 @@ export default withSentryConfig(
 		// For all available options, see:
 		// https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
 
+		// Suppress the annoying source map message
+		silent: true,
+
+		// Disable source maps entirely (faster builds, not needed for portfolio)
+		sourcemaps: {
+			disable: true,
+		},
+
 		// Reduce build time by not uploading extra source maps
 		widenClientFileUpload: false,
 
