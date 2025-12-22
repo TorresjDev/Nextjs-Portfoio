@@ -5,7 +5,14 @@ import MagicButton from "./ui/MagicButton";
 import animationData from "@/data/confetti.json";
 import { assetUrl, socialMedia } from "@/data";
 import { MdDownload, MdDownloadDone } from "react-icons/md";
-import Lottie from "react-lottie";
+import dynamic from "next/dynamic";
+
+// Lazy load Lottie for better performance
+const Lottie = dynamic(
+	() => import("lottie-react").then((mod) => ({ default: mod.default })),
+	{ ssr: false }
+);
+
 
 const Footer = () => {
 	const [downloaded, setDownloaded] = useState(false);
@@ -41,14 +48,9 @@ const Footer = () => {
 							className={`absolute bottom-[19rem] right-[16rem] z-40 w-44 h-44`}
 						>
 							<Lottie
-								options={{
-									loop: downloaded,
-									autoplay: downloaded,
-									animationData: animationData,
-									rendererSettings: {
-										preserveAspectRatio: "xMidYMid slice",
-									},
-								}}
+								animationData={animationData}
+								loop={downloaded}
+								autoPlay={downloaded}
 							/>
 						</span>
 						<a
@@ -116,7 +118,7 @@ const Footer = () => {
 									key={profile.id}
 									href={profile.link}
 									target="_blank"
-									rel="noreferrer"
+									rel="noopener noreferrer"
 									className="w-10 h-10 flex items-center justify-center bg-black-300 rounded-lg hover:bg-cyan-400 transition"
 								>
 									<img

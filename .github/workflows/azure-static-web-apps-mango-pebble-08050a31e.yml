@@ -24,6 +24,7 @@ jobs:
       with:
           submodules: true
           lfs: false
+          persist-credentials: false
 
     - name: Build and Deploy to Azure
       uses: Azure/static-web-apps-deploy@v1
@@ -31,9 +32,10 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_PEBBLE_08050A31E }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (e.g., PR comments)
           action: "upload"
-          app_location: "/" # Update this if your app is in a subfolder
-          api_location: "" # Leave blank if you don't have an API
-          output_location: ".next" # Replace "out" with your actual build output folder (e.g., ".next" for Next.js)
+          app_location: "/"
+          api_location: "" # No API needed for static portfolio
+          output_location: "out" # Using static export
+          skip_app_build: false
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'

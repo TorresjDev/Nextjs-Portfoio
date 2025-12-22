@@ -6,7 +6,11 @@ import { cn } from "@/lib/utils";
 import animationData from "@/data/confetti.json";
 import { GlobeDemo } from "./GridGlobe";
 import { useState } from "react";
-import Lottie from "react-lottie";
+// Lazy load Lottie for better performance
+const Lottie = dynamic(
+	() => import("lottie-react").then((mod) => ({ default: mod.default })),
+	{ ssr: false }
+);
 import MagicButton from "./MagicButton";
 import { MdDownload, MdDownloadDone } from "react-icons/md";
 
@@ -130,14 +134,9 @@ export const BentoGridItem = ({
 						<div className="mt-5 relative -b">
 							<div className={`absolute -bottom-16 right-0 z-40`}>
 								<Lottie
-									options={{
-										loop: downloaded,
-										autoplay: downloaded,
-										animationData: animationData,
-										rendererSettings: {
-											preserveAspectRatio: "xMidYMid slice",
-										},
-									}}
+									animationData={animationData}
+									loop={downloaded}
+									autoPlay={downloaded}
 								/>
 							</div>
 							<a
