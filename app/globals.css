@@ -86,6 +86,15 @@
 	.black-gradient {
 		background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
 	}
+
+	/* Hide scrollbar while maintaining scroll functionality */
+	.scrollbar-hide {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 body,
