@@ -41,36 +41,30 @@ const RecentProjects = () => {
 									<p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2">
 										{des}
 									</p>
-									<div className="flex items-center justify-between mt-7 mb-3">
-										<div className="flex items-center ">
-											{lngIconLts.map((icon, index) => (
-												<div
-													key={icon}
-													className="border border-white/[2.0] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex items-center justify-center"
-													style={{
-														zIndex: 13 - index,
-														transform: `translateX(-${7.2 * index}px)`,
-													}}
-												>
-													<img src={icon} alt={icon} className="p-2" />
-												</div>
-											))}
+									<div className="flex items-center justify-between mt-7 mb-3 gap-2">
+								<div className="flex items-center flex-wrap gap-1 min-w-0 flex-shrink">
+									{lngIconLts.map((icon, index) => (
+										<div
+											key={icon}
+											className="border border-white/[2.0] rounded-full bg-black w-7 h-7 sm:w-8 sm:h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 flex items-center justify-center flex-shrink-0"
+											style={{ zIndex: 13 - index }}
+										>
+											<img src={icon} alt={icon} className="p-1.5 sm:p-2" />
 										</div>
-										<div className="flex justify-center items-center">
-											{toolsIconLts.map((icon, index) => (
-												<div
-													key={icon}
-													className="border border-white/[2.0] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex items-center justify-center"
-													style={{
-														zIndex: 13 - index,
-														transform: `translateX(-${7.2 * index}px)`,
-													}}
-												>
-													<img src={icon} alt={icon} className="p-2" />
-												</div>
-											))}
+									))}
+								</div>
+								<div className="flex items-center flex-wrap gap-1 min-w-0 flex-shrink justify-end">
+									{toolsIconLts.map((icon, index) => (
+										<div
+											key={icon}
+											className="border border-white/[2.0] rounded-full bg-black w-7 h-7 sm:w-8 sm:h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 flex items-center justify-center flex-shrink-0"
+											style={{ zIndex: 13 - index }}
+										>
+											<img src={icon} alt={icon} className="p-1.5 sm:p-2" />
 										</div>
-									</div>
+									))}
+								</div>
+							</div>
 								</div>
 							</PinContainer>
 						</div>
