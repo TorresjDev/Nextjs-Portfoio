@@ -24,6 +24,7 @@ jobs:
       with:
           submodules: true
           lfs: false
+          persist-credentials: false
 
     - name: Build and Deploy to Azure
       uses: Azure/static-web-apps-deploy@v1

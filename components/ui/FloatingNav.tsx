@@ -14,6 +14,7 @@ import {
 	FaQuoteRight,
 	FaAddressBook,
 } from "react-icons/fa";
+import { IconType } from "react-icons";
 
 export const FloatingNav = ({
 	navItems,
@@ -30,7 +31,7 @@ export const FloatingNav = ({
 	const [visible, setVisible] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
 
-	const iconMapping: { [key: string]: React.ElementType } = {
+	const iconMapping: { [key: string]: IconType } = {
 		FaInfoCircle,
 		FaBook,
 		FaQuoteRight,
