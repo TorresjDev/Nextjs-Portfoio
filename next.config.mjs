@@ -1,19 +1,9 @@
 import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	// Enable SWC minification (faster than Terser)
-	swcMinify: true,
-
-	// Optimize package imports for faster builds
-	modularizeImports: {
-		"react-icons": {
-			transform: "react-icons/{{member}}",
-		},
-	},
-
 	// Reduce dev compilation overhead
 	experimental: {
-		optimizePackageImports: ["framer-motion", "three", "@react-three/drei"],
+		optimizePackageImports: ["framer-motion", "three", "@react-three/drei", "react-icons"],
 	},
 
 	// Security headers
@@ -28,7 +18,7 @@ const nextConfig = {
 					},
 					{
 						key: "X-Frame-Options",
-						value: "DENY",
+						value: "SAMEORIGIN",
 					},
 					{
 						key: "X-XSS-Protection",

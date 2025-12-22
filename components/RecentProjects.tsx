@@ -9,12 +9,12 @@ const RecentProjects = () => {
 			<h1 className="heading text-center">
 				Highlighting Recent <span className="text-cyan-400">Innovations</span>
 			</h1>
-			<div className="flex flex-wrap items-center justify-center p-4 mt-10 gap-x-10 lg:gap-x-16 gap-y-20 xl:gap-y-10 2xl:gap-y-6">
+			<div className="flex flex-wrap items-center justify-center p-4 mt-10 gap-x-10  md:gap-x-20 lg:gap-x-15 gap-y-20 sm:gap-y-1 md:gap-y-28 xl:gap-y-15 2xl:gap-y-12">
 				{projects.map(
 					({ id, title, des, img, lngIconLts, toolsIconLts, link }) => (
 						<div
 							key={id}
-							className="h-[39rem] sm:h-[36rem] lg:h-[24rem] xl:h-[27rem] 2xl:h-[30rem] 3xl:h-[33rem] flex items-center justify-center w-full max-w-[40vw] lg:max-w-[36vw] xl:max-w-[38vw]  my-4 sm:my-14"
+							className="h-[39rem] sm:h-[36rem] lg:h-[24rem] xl:h-[27rem] 2xl:h-[30rem] 3xl:h-[33rem] flex items-center justify-center w-full max-w-[40vw] lg:max-w-[36vw] xl:max-w-[38vw]  my-4 sm:my-2"
 						>
 							<PinContainer
 								title={link}

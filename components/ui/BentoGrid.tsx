@@ -7,7 +7,10 @@ import animationData from "@/data/confetti.json";
 import { GlobeDemo } from "./GridGlobe";
 import { useState } from "react";
 // Lazy load Lottie for better performance
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+const Lottie = dynamic(
+	() => import("lottie-react").then((mod) => ({ default: mod.default })),
+	{ ssr: false }
+);
 import MagicButton from "./MagicButton";
 import { MdDownload, MdDownloadDone } from "react-icons/md";
 

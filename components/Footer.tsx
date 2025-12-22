@@ -8,7 +8,10 @@ import { MdDownload, MdDownloadDone } from "react-icons/md";
 import dynamic from "next/dynamic";
 
 // Lazy load Lottie for better performance
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+const Lottie = dynamic(
+	() => import("lottie-react").then((mod) => ({ default: mod.default })),
+	{ ssr: false }
+);
 
 
 const Footer = () => {

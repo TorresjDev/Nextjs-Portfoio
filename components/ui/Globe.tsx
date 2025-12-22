@@ -2,12 +2,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
-import { useThree, Object3DNode, Canvas, extend } from "@react-three/fiber";
+import { useThree, ThreeElement, Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import countries from "@/data/globe.json";
 declare module "@react-three/fiber" {
 	interface ThreeElements {
-		threeGlobe: Object3DNode<ThreeGlobe, typeof ThreeGlobe>;
+		threeGlobe: ThreeElement<typeof ThreeGlobe>;
 	}
 }
 
@@ -57,7 +57,7 @@ interface WorldProps {
 	data: Position[];
 }
 
-let numbersOfRings = [0];
+// 17: const cameraZ = 300; // Unused in this scope after refactor
 
 export function Globe({ globeConfig, data }: WorldProps) {
 	const [globeData, setGlobeData] = useState<
@@ -217,19 +217,21 @@ export function Globe({ globeConfig, data }: WorldProps) {
 		startAnimation,
 	]);
 
+	const numbersOfRings = useRef<number[]>([0]);
+
 	useEffect(() => {
 		if (!globeRef.current || !globeData) return;
 
 		const interval = setInterval(() => {
 			if (!globeRef.current || !globeData) return;
-			numbersOfRings = genRandomNumbers(
+			numbersOfRings.current = genRandomNumbers(
 				0,
 				data.length,
 				Math.floor((data.length * 4) / 5)
 			);
 
 			globeRef.current.ringsData(
-				globeData.filter((d, i) => numbersOfRings.includes(i))
+				globeData.filter((d, i) => numbersOfRings.current.includes(i))
 			);
 		}, 2000);
 
@@ -245,40 +247,25 @@ export function Globe({ globeConfig, data }: WorldProps) {
 	);
 }
 
-export function WebGLRendererConfig() {
-	const { gl, size } = useThree();
-
-	useEffect(() => {
-		if (typeof window !== "undefined") {
-			gl.setPixelRatio(window.devicePixelRatio);
-			gl.setSize(size.width, size.height);
-			gl.setClearColor(0xffaaff, 0);
-		} else { 
-			console.log("Window not defined");
-		}
-	}, [gl, size.height, size.width]);
-
-	return null;
-}
 
 export function World(props: WorldProps) {
 	const { globeConfig } = props;
-	const scene = new Scene();
-	scene.fog = new Fog(0xffffff, 400, 2000);
+	const scene = useMemo(() => {
+		const s = new Scene();
+		s.fog = new Fog(0xffffff, 400, 2000);
+		return s;
+	}, []);
 
 	return typeof window !== "undefined" ? (
 		<Canvas
 			scene={scene}
-			camera={
-				new PerspectiveCamera(
-					33,
-					window.innerWidth / window.innerHeight,
-					0.1,
-					3000
-				)
-			}
+			camera={{
+				fov: 33,
+				position: [0, 0, 300],
+				near: 0.1,
+				far: 3000,
+			}}
 		>
-			<WebGLRendererConfig />
 			<ambientLight color={globeConfig.ambientLight} intensity={0.6} />
 			<directionalLight
 				color={globeConfig.directionalLeftLight}
@@ -297,8 +284,8 @@ export function World(props: WorldProps) {
 			<OrbitControls
 				enablePan={false}
 				enableZoom={false}
-				minDistance={cameraZ * 0.9}
-				maxDistance={cameraZ * 1.2}
+				minDistance={300 * 0.9}
+				maxDistance={300 * 1.2}
 				autoRotateSpeed={1}
 				autoRotate={true}
 				minPolarAngle={Math.PI / 2}
